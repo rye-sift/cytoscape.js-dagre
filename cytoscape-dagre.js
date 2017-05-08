@@ -148,6 +148,15 @@ SOFTWARE.
         cy.getElementById(id).scratch().dagre = n;
       }
 
+      var gEdgeIds = g.edges();
+      for( var i = 0; i < gEdgeIds.length; i++ ){
+        var id = gEdgeIds[i];
+        var e = g.edge( id );
+
+        var name = id.name;
+        cy.getElementById(name).scratch().dagre = e;
+      }
+
       var dagreBB;
 
       if( options.boundingBox ){
